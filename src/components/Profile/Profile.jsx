@@ -1,27 +1,27 @@
 import style from "./Profile.module.css"
 
 const Profile = ({ name, tag, location, image, stats:{followers, views, likes} }) => {
-  return (<div>
-    <div className={style.image}>
-      <img
+  return (<div className={style.container}>
+    <div className={style.userInfo}>
+      <img className={style.userPhoto} height={200} width={200}
         src={image}
         alt="User avatar"
       />
-      <p>{name}</p>
-      <p>{tag}</p>
+      <p className={style.userName}>{name}</p>
+      <p>@{tag}</p>
       <p>{location}</p>
     </div>
 
-    <ul>
-      <li>
+    <ul className={style.statsList}>
+      <li className={style.statsListItem}>
         <span>Followers</span>
         <span>{followers}</span>
       </li>
-      <li>
+      <li className={style.statsListItem}>
         <span>Views</span>
         <span>{views}</span>
       </li>
-      <li>
+      <li className={style.statsListItem}>
         <span>Likes</span>
         <span>{likes}</span>
       </li>
